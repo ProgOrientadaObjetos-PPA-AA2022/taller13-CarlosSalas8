@@ -5,6 +5,8 @@
  */
 package p2;
 
+import java.util.ArrayList;
+import p1.Matricula;
 import p1.MatriculaCampamento;
 import p1.MatriculaColegio;
 
@@ -13,14 +15,15 @@ import p1.MatriculaColegio;
  * @author reroes
  */
 public class TipoMatricula {
-    private double promedioMatriculas;
-    private MatriculaCampamento campamento;
-    private MatriculaColegio colegio;
+    //private double promedioMatriculas;
+    //private MatriculaCampamento campamento;
+    //private MatriculaColegio colegio;
+    
     // private MatriculaEscuela escuela;
     // private MatriculaJardin jardin;
     // private MatriculaMaternal maternal;
     // private MatriculaMaternal maternal2;
-    
+    /*
     public void establecerMatriculaCampamento(MatriculaCampamento c){
         campamento = c;
     }
@@ -46,4 +49,45 @@ public class TipoMatricula {
     public double obtenerPromedioTarifas(){
         return promedioMatriculas;
     }
+*/
+    
+    private double promedioTarifas;
+    private ArrayList<Matricula> matriculas; // puedo tener muchos tipos de Transporte
+    
+    
+    public void establecerMatricula(ArrayList<Matricula> m){
+        matriculas = m;
+    }
+    
+    public ArrayList<Matricula> obtenerMatricula(){
+        return matriculas;
+    }
+    
+    public void establecerPromedioTarifas(){
+        double suma = 0;
+        for (int i = 0; i < obtenerMatricula().size(); i++) {
+            suma = suma + obtenerMatricula().get(i).obtenerTarifa();
+        }
+        promedioTarifas = suma / obtenerMatricula().size();
+        
+    }
+    
+    public double obtenerPromedioTarifas(){
+        return promedioTarifas;
+    }
+    public String toString(){
+        String cadena = String.format("Matriculas");
+        for (int i = 0; i < matriculas.size(); i++) {
+            cadena = String.format("%s\n%s",
+                    cadena,
+                    matriculas.get(i));
+        }
+        cadena = String.format("%s\n"
+                + "Promedio tarifas: %.2f\n",
+                cadena,
+                promedioTarifas);
+        return cadena;
+    }
+    
 }
+

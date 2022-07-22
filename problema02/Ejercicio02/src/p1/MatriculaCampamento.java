@@ -9,7 +9,8 @@ package p1;
  *
  * @author reroes
  */
-public class MatriculaCampamento {
+public class MatriculaCampamento extends Matricula {
+    /*
     private double tarifa;
     
     public void establecerTarifa(){
@@ -20,4 +21,18 @@ public class MatriculaCampamento {
     public double obtenerTarifa(){
         return tarifa;
     }
+*/
+    @Override
+    public void establecerTarifa() {
+        tarifa = 100.2 + 30.2 + 90.2;
+    }
+
+    @Override
+     public String toString(){
+            String cadena = String.format("Matricula Campamento: %s\n "
+                +"Tarifa: $%.2f\n",
+                tarifa);
+        return cadena;
+    }
 }
+
