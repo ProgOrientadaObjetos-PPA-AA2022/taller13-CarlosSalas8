@@ -2,18 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package p1;
+package p3;
 
 /**
  *
- * @author SALA I
+ * @author DELL
  */
-public abstract class Matricula {
-    protected double tarifa;
+public interface DominioCorreo {
     
-    public abstract void establecerTarifa();
+    public void establecerDominio(String d);
     
-    public double obtenerTarifa(){
-        return tarifa;
-    }
+    public String obtenerDominio();
 }

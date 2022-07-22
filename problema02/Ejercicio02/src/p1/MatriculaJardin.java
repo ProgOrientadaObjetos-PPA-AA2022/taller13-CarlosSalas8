@@ -25,13 +25,14 @@ public class MatriculaJardin extends Matricula {
 */
  @Override
     public void establecerTarifa() {
+        // tarifa = costo desayunos + costo libros + costo paseos
         tarifa = 50.2 + 140.2 + 40;
     }
 
     @Override
-     public String toString(){
-            String cadena = String.format("Matricula Jardin: %s\n "
-                +"Tarifa: $%.2f\n",
+    public String toString() {
+        String cadena = String.format("Matricula Jardin\n"
+                + "Tarifa: %.2f",
                 tarifa);
         return cadena;
     }

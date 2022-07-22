@@ -51,43 +51,42 @@ public class TipoMatricula {
     }
 */
     
+    private ArrayList <Matricula> lista;
     private double promedioTarifas;
-    private ArrayList<Matricula> matriculas; // puedo tener muchos tipos de Transporte
+
+    // private MatriculaEscuela escuela;
+    // private MatriculaJardin jardin;
+    // private MatriculaMaternal maternal;
+    // private MatriculaMaternal maternal2;
     
-    
-    public void establecerMatricula(ArrayList<Matricula> m){
-        matriculas = m;
+    public void establecerMatriculas(ArrayList <Matricula> m){
+        lista = m;
     }
     
-    public ArrayList<Matricula> obtenerMatricula(){
-        return matriculas;
+    public ArrayList <Matricula> obtenerMatriculas(){
+        return lista;
     }
-    
+        
     public void establecerPromedioTarifas(){
         double suma = 0;
-        for (int i = 0; i < obtenerMatricula().size(); i++) {
-            suma = suma + obtenerMatricula().get(i).obtenerTarifa();
+        for (int i = 0; i < lista.size(); i++) {
+            suma = suma + lista.get(i).obtenerTarifa();
         }
-        promedioTarifas = suma / obtenerMatricula().size();
-        
+        promedioTarifas = suma/lista.size();
     }
     
     public double obtenerPromedioTarifas(){
         return promedioTarifas;
     }
+    
     public String toString(){
-        String cadena = String.format("Matriculas");
-        for (int i = 0; i < matriculas.size(); i++) {
-            cadena = String.format("%s\n%s",
-                    cadena,
-                    matriculas.get(i));
+        String cadena = String.format("Lista Matriculas\n\n");
+        for (int i = 0; i < lista.size(); i++) {
+            cadena = String.format("%s%s\n",cadena,lista.get(i));
         }
         cadena = String.format("%s\n"
-                + "Promedio tarifas: %.2f\n",
-                cadena,
+                + "Promedio tarifas: %.2f\n",cadena,
                 promedioTarifas);
         return cadena;
     }
-    
 }
-

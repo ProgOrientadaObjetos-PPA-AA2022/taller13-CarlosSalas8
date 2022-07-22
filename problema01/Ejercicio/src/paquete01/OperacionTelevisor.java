@@ -15,16 +15,14 @@ public class OperacionTelevisor {
     private ArrayList<Televisor> lista;
     private double totalPrecioTvs;
     private double televisorMasCaro;
-    private String listaMarcaVendidas;
+    private String listaMarcasVendidas;
 
     public void establecerTelevisor(ArrayList<Televisor> t) {
         lista = t;
-
     }
 
     public ArrayList<Televisor> obtenerTelevisor() {
         return lista;
-
     }
 
     public void establecerTotalPrecioTvs() {
@@ -35,7 +33,6 @@ public class OperacionTelevisor {
 
     public double obtenerTotalPrecioTvs() {
         return totalPrecioTvs;
-
     }
 
     public void establecerTelevisorMasCaro() {
@@ -43,15 +40,12 @@ public class OperacionTelevisor {
         for (int i = 0; i < lista.size(); i++) {
             if (televisorMasCaro < lista.get(i).obtenerPrecio()) {
                 televisorMasCaro = lista.get(i).obtenerPrecio();
-
             }
-
         }
     }
 
     public double obtenerTelevisorMasCaro() {
         return televisorMasCaro;
-
     }
 
     public void establecerListaMarcasVendidas() {
@@ -59,31 +53,29 @@ public class OperacionTelevisor {
         for (int i = 0; i < lista.size(); i++) {
             s = String.format("%s%s\n", s, lista.get(i).obtenerMarca());
         }
-        listaMarcaVendidas = s;
-
+        listaMarcasVendidas = s;
     }
 
-    public String obtenerListaMarcaVendidas() {
-        return listaMarcaVendidas;
-
+    public String obtenerListaMarcasVendidas() {
+        return listaMarcasVendidas;
     }
 
-    @Override
     public String toString() {
-
-        String cadena = String.format("Televisor");
-        for (Televisor e : obtenerTelevisor()) {
-            cadena = String.format("%s\n%s", cadena, e.obtenerMarca());
+        String cadena = String.format("Televisores\n");
+        for (int i = 0; i < lista.size(); i++) {
+            cadena = String.format("%s%s", cadena, lista.get(i));
         }
-        cadena = String.format("%s\n"
-                + "Total Precio Tv: %.2f\n"
-                + "Televisor Mas Caro: %2.f\n"
-                + "Lista Marca Vendids: %s\n",
+        cadena = String.format("%s"
+                + "Precio Televisor: %.2f\n"
+                + "Televisor mas Caro: %.2f\n"
+                + "Lista Marcas Vendidas:\n"
+                + "%s\n",
                 cadena,
-                obtenerTotalPrecioTvs(),
-                obtenerTelevisorMasCaro(),
-                obtenerListaMarcaVendidas());
+                totalPrecioTvs,
+                televisorMasCaro,
+                listaMarcasVendidas);
         return cadena;
     }
-
 }
+
+

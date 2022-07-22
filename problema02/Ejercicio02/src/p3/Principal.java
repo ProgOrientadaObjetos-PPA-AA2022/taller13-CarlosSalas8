@@ -41,37 +41,38 @@ public class Principal {
         System.out.printf("%s\n", tipos);
     }
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) {    
+        
         TipoMatricula tipos = new TipoMatricula();
-
+        
         MatriculaCampamento mc = new MatriculaCampamento();
         mc.establecerTarifa();
-
+        
         MatriculaColegio mcol = new MatriculaColegio();
         mcol.establecerTarifa();
-
+        
         MatriculaEscuela me = new MatriculaEscuela();
-
+        
         MatriculaJardin mj = new MatriculaJardin();
-
+        
         MatriculaMaternal mm = new MatriculaMaternal();
-
+        
         MatriculaMaternal mm2 = new MatriculaMaternal();
-
-        ArrayList<Matricula> lista = new ArrayList<>();
+        
+        ArrayList <Matricula> lista = new ArrayList<>();
         lista.add(me);
         lista.add(mj);
         lista.add(mm);
         lista.add(mm2);
         
-        tipos.establecerMatricula(lista);
+        tipos.establecerMatriculas(lista);
+        
         for (int i = 0; i < lista.size(); i++) {
-            lista.get(i).establecerTarifa();
-            
+           lista.get(i).establecerTarifa();
         }
-
+        
         tipos.establecerPromedioTarifas();
-
-        System.out.printf("%s",lista);
+        
+        System.out.printf("%s",tipos);
     }
 }
