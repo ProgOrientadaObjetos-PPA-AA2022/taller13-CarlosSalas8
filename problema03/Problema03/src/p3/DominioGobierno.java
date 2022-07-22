@@ -5,10 +5,9 @@
 package p3;
 
 import java.io.Serializable;
-
 /**
  *
- * @author SALA I
+ * @author reroes
  */
 public class DominioGobierno  implements Dominios,Serializable{
     private String dominio;

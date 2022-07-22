@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author SALA I
+ * @author reroes
  */
 public class DominioUTPL  implements Dominios,Serializable{
     private String dominio;

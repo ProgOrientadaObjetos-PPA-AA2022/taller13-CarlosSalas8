@@ -6,7 +6,7 @@ package p3;
 
 /**
  *
- * @author DELL
+ * @author reroes
  */
 public interface DominioCorreo {
     

@@ -6,7 +6,7 @@ package p3;
 
 /**
  *
- * @author SALA I
+ * @author reroes
  */
 public interface Dominios {
     

@@ -8,10 +8,7 @@ package p2;
 import java.util.ArrayList;
 import p3.Correo;
 
-/**
- *
- * @author reroes
- */
+
 public class Estudiante {
 
     private String nombres;

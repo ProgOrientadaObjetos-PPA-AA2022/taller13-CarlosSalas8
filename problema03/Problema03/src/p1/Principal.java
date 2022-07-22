@@ -14,10 +14,7 @@ import p3.DominioOutlook;
 import p3.DominioUTPL;
 import p3.DominioYahoo;
 
-/**
- *
- * @author reroes
- */
+
 public class Principal {
 
     public static void main(String[] args) {
